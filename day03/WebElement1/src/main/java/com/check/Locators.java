@@ -14,25 +14,25 @@ public class Locators {
 		
 		WebDriver driver = new ChromeDriver();
 		driver.get("http://localhost/espocrm");
-		Thread.sleep(Duration.ofSeconds(2));
+		Thread.sleep(5000);
 		
 		By locatorPoweredBy = By.linkText("EspoCRM, Inc.");
 		WebElement lnkPoweredBy = driver.findElement(locatorPoweredBy);
 		lnkPoweredBy.click();
 
-		Thread.sleep(Duration.ofSeconds(5));
+		Thread.sleep(5000);
 		driver.quit();
 
 		driver = new ChromeDriver();
 		driver.get("http://localhost/espocrm");
-		Thread.sleep(Duration.ofSeconds(2));
+		Thread.sleep(5000);
 
 		By locatorChargedBy = By.partialLinkText("Inc.");
 		WebElement lnkChargedBy = driver.findElement(locatorChargedBy);
 		lnkChargedBy.click();
 		
 		
-		Thread.sleep(Duration.ofSeconds(5));
+		Thread.sleep(5000);
 		driver.quit();
 
 	}

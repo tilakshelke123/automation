@@ -16,7 +16,7 @@ public class WebE {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("http://localhost/espocrm");
-		Thread.sleep(Duration.ofSeconds(2));
+		Thread.sleep(2000);
 		
 		By locatorUsername = By.id("field-userName");
 		WebElement txtUsername = driver.findElement(locatorUsername);
@@ -43,7 +43,7 @@ public class WebE {
 		txtUsername.submit();
 		
 		
-		Thread.sleep(Duration.ofSeconds(5));
+		Thread.sleep(2000);
 		driver.quit();
 
 	}

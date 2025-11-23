@@ -14,21 +14,19 @@ public class WebFindE {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("http://localhost/espocrm");
-		Thread.sleep(Duration.ofSeconds(2));
-		
+		Thread.sleep(5000);		
 		driver.findElement(By.id("field-userName")).sendKeys("admin");
 		driver.findElement(By.name("password")).sendKeys("admin");
-		driver.findElement(By.tagName("button")).click();
-		Thread.sleep(Duration.ofSeconds(5));
+		Thread.sleep(5000);	
 		
 		WebElement header = driver.findElement(By.className("navbar-header"));
-		Thread.sleep(Duration.ofSeconds(5));
+		Thread.sleep(5000);	
 		WebElement logo = header.findElement(By.className("navbar-logo-container"));
-		Thread.sleep(Duration.ofSeconds(5));
+		Thread.sleep(5000);	
 		WebElement link =  logo.findElement(By.tagName("a"));
-		Thread.sleep(Duration.ofSeconds(5));
+		Thread.sleep(5000);	
 		link.click();
-		Thread.sleep(Duration.ofSeconds(5));
+		Thread.sleep(5000);	
 		driver.quit();
 
 	}

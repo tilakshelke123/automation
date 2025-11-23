@@ -17,29 +17,26 @@ public class MultiSelect{
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("http://localhost/samples/select.php");
-		Thread.sleep(Duration.ofSeconds(2));
-		
+		Thread.sleep(5000);		
 		WebElement el = driver.findElement(By.id("langs"));
 		Select langs = new Select(el); // dropdown ke vakt 
 		langs.selectByIndex(0);
-		Thread.sleep(Duration.ofSeconds(1));
+		Thread.sleep(5000);
 		langs.selectByVisibleText("CSS");
-		Thread.sleep(Duration.ofSeconds(1));
+		Thread.sleep(5000);
 		langs.selectByContainsVisibleText("Type");
-		Thread.sleep(Duration.ofSeconds(1));
-		
+		Thread.sleep(5000);		
 		langs.deselectByIndex(3);
-		Thread.sleep(Duration.ofSeconds(1));
+		Thread.sleep(5000);
 		langs.deselectByVisibleText("CSS");
-		Thread.sleep(Duration.ofSeconds(1));
+		Thread.sleep(5000);
 		langs.deSelectByContainsVisibleText("HTM");
-		Thread.sleep(Duration.ofSeconds(2));
-		
+		Thread.sleep(5000);		
 
 		langs.selectByVisibleText("CSS");
 		langs.selectByIndex(0);
 		langs.selectByContainsVisibleText("Type");
-		Thread.sleep(Duration.ofSeconds(2));
+		Thread.sleep(5000);
 
 		List<WebElement> allLangs = langs.getOptions();
 		System.out.println("###Get All Options");
@@ -58,7 +55,7 @@ public class MultiSelect{
 		System.out.println("###Multiple "+langs.isMultiple());
 		langs.deselectAll();
 		
-		Thread.sleep(Duration.ofSeconds(5));
+		Thread.sleep(5000);
 		driver.quit();
 
 	}

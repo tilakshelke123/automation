@@ -14,6 +14,7 @@ public static void main(String[] args) throws InterruptedException {
 		WebDriver driver = new ChromeDriver();
 		driver.get("http://localhost/espocrm");
 		
+		// key value pair 
 		Cookie cookie1 = new Cookie("module1", "selenium");
 		driver.manage().addCookie(cookie1);
 
@@ -62,7 +63,7 @@ public static void main(String[] args) throws InterruptedException {
 		}
 		
 		
-		Thread.sleep(Duration.ofSeconds(5));
+		Thread.sleep(5000);
 		driver.quit();
 
 	}

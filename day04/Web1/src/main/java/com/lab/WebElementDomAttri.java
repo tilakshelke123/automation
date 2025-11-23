@@ -15,7 +15,7 @@ public class WebElementDomAttri {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("http://localhost/samples/dom.php");
-		Thread.sleep(Duration.ofSeconds(5));
+		Thread.sleep(5000);
 		
 		WebElement txtUsername = driver.findElement(By.id("username"));
 		System.out.println("Before Type");
@@ -27,7 +27,7 @@ public class WebElementDomAttri {
 		System.out.println("GetDOMAttribute: "+txtUsername.getDomAttribute("value")); //default value
 
 
-		Thread.sleep(Duration.ofSeconds(5));
+		Thread.sleep(5000);
 		driver.quit();
 
 	}

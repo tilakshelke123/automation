@@ -17,15 +17,16 @@ public class WebElementAssignment{
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("https://www.google.com");
-		Thread.sleep(Duration.ofSeconds(10));
+		Thread.sleep(10000);
+
 		
 		WebElement el = driver.findElement(By.className("CgwTDb"));
 		System.out.println(el.isDisplayed());
-		Thread.sleep(Duration.ofSeconds(7));
+		Thread.sleep(5000);
 		System.out.println(el.isDisplayed());
 		
 		
-		Thread.sleep(Duration.ofSeconds(5));
+		Thread.sleep(5000);
 		driver.quit();
 
 	}

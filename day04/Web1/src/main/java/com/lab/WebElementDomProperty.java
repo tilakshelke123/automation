@@ -15,7 +15,7 @@ public class WebElementDomProperty {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("http://localhost/espocrm");
-		Thread.sleep(Duration.ofSeconds(5));
+		Thread.sleep(5000);
 		
 		By locatorUsername = By.id("field-userName"); //  criteria 
 		WebElement txtUsername = driver.findElement(locatorUsername); // we find 
@@ -24,21 +24,23 @@ public class WebElementDomProperty {
 		By locatorPassword = By.name("password");
 		WebElement txtPassword = driver.findElement(locatorPassword);
 		txtPassword.sendKeys("admin");
-		Thread.sleep(Duration.ofSeconds(2));
+		Thread.sleep(5000);
 
 		By locatorLogin = By.tagName("button");
 		WebElement btnLogin = driver.findElement(locatorLogin);
 		btnLogin.click();
 		
 		
-		Thread.sleep(Duration.ofSeconds(5));
+		Thread.sleep(5000);
 
 		driver.get("http://localhost/espocrm/#Account");
 
-		Thread.sleep(Duration.ofSeconds(3));
+		Thread.sleep(5000);
 
 		System.out.println("Initial State");
 		WebElement el = driver.findElement(By.className("select-all"));
+		Thread.sleep(5000);
+
 		System.out.println("GetAttribute: "+el.getAttribute("checked"));
 		System.out.println("GetDOMProperty: "+el.getDomProperty("checked"));
 
@@ -48,7 +50,7 @@ public class WebElementDomProperty {
 		System.out.println("GetAttribute: "+el.getAttribute("checked"));
 		System.out.println("GetDOMProperty: "+el.getDomProperty("checked")); // updated value 
 
-		Thread.sleep(Duration.ofSeconds(5));
+		Thread.sleep(5000);
 		driver.quit();
 
 	}

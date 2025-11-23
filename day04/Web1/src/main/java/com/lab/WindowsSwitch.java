@@ -16,14 +16,14 @@ public class WindowsSwitch {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("http://localhost/espocrm");
-		Thread.sleep(Duration.ofSeconds(2));
+		Thread.sleep(5000);
 
 		String originalWindow = driver.getWindowHandle(); // single window id 
 		Set<String> before = driver.getWindowHandles(); // all list window id 
 		System.out.println("Current Window Handle"+originalWindow);
 		System.out.println("All Window IDs Before New Window "+before);
 		driver.findElement(By.linkText("EspoCRM, Inc.")).click();
-		Thread.sleep(Duration.ofSeconds(2));
+		Thread.sleep(5000);
 
 		//Switching Logic
 		Set<String> after = driver.getWindowHandles(); // again // all list window id 
@@ -34,18 +34,18 @@ public class WindowsSwitch {
 		driver.switchTo().window(newHandle);		
 		//Switching Logic End
 		
-		Thread.sleep(Duration.ofSeconds(2));
+		Thread.sleep(5000);
 		System.out.println("New Window Title: "+driver.getTitle());
 		driver.findElement(By.xpath("//a[text()='DOWNLOAD']")).click();
-		Thread.sleep(Duration.ofSeconds(3));
+		Thread.sleep(5000);
 		driver.close();
 		
-		Thread.sleep(Duration.ofSeconds(2));
+		Thread.sleep(5000);
 		driver.switchTo().window(originalWindow); //Mandatory (Exception - no such window: target window already closed)
 		driver.switchTo().newWindow(WindowType.WINDOW); //  new window and switched automatically 
-		Thread.sleep(Duration.ofSeconds(1));
+		Thread.sleep(5000);
 		driver.get("http://localhost/espocrm");
-		Thread.sleep(Duration.ofSeconds(3));
+		Thread.sleep(5000);
 		driver.quit();
 
 	}
