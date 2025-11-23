@@ -15,38 +15,38 @@ public class Alerts {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("http://localhost/samples/alerts.php");
-		Thread.sleep(Duration.ofSeconds(2));
+		Thread.sleep(2000);
 		
 		driver.findElement(By.xpath("//button[text()='Show Alert']")).click();
-		Thread.sleep(Duration.ofSeconds(2));
+		Thread.sleep(2000);
 		String alertText = driver.switchTo().alert().getText();
 		System.out.println("Alert Text: "+alertText);
 		driver.switchTo().alert().accept();
-		Thread.sleep(Duration.ofSeconds(3));
+		Thread.sleep(5000);
 		
 		driver.findElement(By.xpath("//button[text()='Show Input Alert']")).click();
-		Thread.sleep(Duration.ofSeconds(2));
+		Thread.sleep(5000);
 		driver.switchTo().alert().dismiss();
-		Thread.sleep(Duration.ofSeconds(2));
+		Thread.sleep(5000);
 		alertText = driver.switchTo().alert().getText();
 		System.out.println("Alert Dismiss Message: "+alertText);
 		driver.switchTo().alert().accept();
-		Thread.sleep(Duration.ofSeconds(2));
+		Thread.sleep(5000);
 
 		
 		driver.findElement(By.xpath("//button[text()='Show Input Alert']")).click();
-		Thread.sleep(Duration.ofSeconds(2));
+		Thread.sleep(2000);
 		driver.switchTo().alert().sendKeys("test");
-		Thread.sleep(Duration.ofSeconds(2));
+		Thread.sleep(2000);
 		driver.switchTo().alert().accept();
-		Thread.sleep(Duration.ofSeconds(2));
+		Thread.sleep(2000);
 		alertText = driver.switchTo().alert().getText();
 		System.out.println("Entered Value: "+alertText);
 		driver.switchTo().alert().accept();
-		Thread.sleep(Duration.ofSeconds(3));
+		Thread.sleep(2000);
 
 		
-		Thread.sleep(Duration.ofSeconds(5));
+		Thread.sleep(2000);
 		driver.quit();
 
 	}

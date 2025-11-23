@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class EspoCrmLogin {
+public class CreateDataBase {
 
 	public static void main(String[] args) throws Exception {
 		WebDriver driver = new ChromeDriver();
@@ -45,43 +45,41 @@ public class EspoCrmLogin {
 		System.out.println("clicked on Account !!!");
 		Thread.sleep(5000);
 
-		By test = By.xpath("//a[@class='link'] ");
-		WebElement testClick = driver.findElement(test);
+		By credit = By.xpath("//a[@data-name='create']");
+		WebElement creditClick = driver.findElement(credit);
 		Thread.sleep(5000);
-		testClick.click();
-		System.out.println("clicked on test Account !!!");
+		creditClick.click();
+		System.out.println("clicked on Credit Account  button !!!");
 		Thread.sleep(5000);
-
-		By edit = By.xpath(
-				"// div[@class='btn-group actions-btn-group']/descendant::button[@class='btn action btn-xs-wide detail-action-item btn-default radius-left'] ");
-		WebElement editClick = driver.findElement(edit);
+		
+		By name = By.xpath("//input[@data-name='name']");
+		WebElement nameInput = driver.findElement(name);
 		Thread.sleep(5000);
-		editClick.click();
-		System.out.println("clicked on edit button !!!");
+		nameInput.clear();
+		nameInput.sendKeys("CCST_DATA");
+		System.out.println("Successfully Entered Credit Account Details !!");
 		Thread.sleep(5000);
+		
 
 		By web = By.xpath("(//input[@class='main-element form-control'])[2]");
 		WebElement webInput = driver.findElement(web);
 		webInput.clear();
-		webInput.sendKeys("www.google.com");
+		webInput.sendKeys("https://cdac.in/index.aspx?id=edu_acts_CertCoursesHomePage");
 		System.out.println("Entered Website SuccessFully !!!!!!");
 		Thread.sleep(5000);
 
 		By gmail = By.xpath("//input[@class='form-control email-address']");
 		WebElement gmailInput = driver.findElement(gmail);
 		gmailInput.clear();
-		gmailInput.sendKeys("ts123@gmail.com");
+		gmailInput.sendKeys("cdac-acts@gmail.com");
 		System.out.println("Entered gmail SuccessFully !!!!!!");
 		Thread.sleep(5000);
 
-		// By phone = By.xpath("(//div[@class='selectize-control form-control
-		// radius-left single
-		// plugin-espo_select']/descendant::div[@class='selectize-input items
-		// has-options full has-items'])[1]");
-		By phone = By.xpath(
-				"//html/body/div[1]/div/div[2]/div/div[4]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/div/div/div/span[1]/div/div[1]/div");
+	
+		By phone = By.xpath("(//div[@class='selectize-input items full has-options has-items'])[1]");
+		////html/body/div[1]/div/div[2]/div/div[4]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/div/div/div/span[1]/div/div[1]/div
+		Thread.sleep(2000);
 		WebElement phoneInput = driver.findElement(phone);
-		/// html/body/div[1]/div/div[2]/div/div[4]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/div/div/div/span[1]/div/div[1]/div
 		Thread.sleep(5000);
 		phoneInput.click();
 		Thread.sleep(2000);
@@ -99,7 +97,7 @@ public class EspoCrmLogin {
 		WebElement numInput = driver.findElement(num);
 		Thread.sleep(5000);
 		numInput.clear();
-		numInput.sendKeys("7776980384");
+		numInput.sendKeys("1234567892");
 		System.out.println(" phone number enetered SuccessFully !!!!!!");
 		Thread.sleep(5000);
 
@@ -144,44 +142,7 @@ public class EspoCrmLogin {
 		System.out.println("Shipping Address Entered SuccessFully !!!!!!");
 		Thread.sleep(5000);
 
-//  select SECTION 
-//		By detailsType = By.xpath("//div[@class='selectize-input items has-options full has-items']");
-//		//By detailsType = By.xpath("//*[@id=\"account-detail-304\"]/div[4]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div/div/div[1]");
-//		WebElement detailsInput = driver.findElement(detailsType);
-//		
-//
-//		Select details = new Select(detailsInput);
-//		details.selectByIndex(2);
-//		System.out.println(" Details selected  SuccessFully !!!!!!");
-//		Thread.sleep(5000);
-//
-//		By industry = By.xpath("(//div[@class='selectize-input items has-options full has-items'])[2]");
-//		WebElement industryInput = driver.findElement(industry);
-//
-//		Select industrySelect = new Select(industryInput);
-//		industrySelect.selectByIndex(7);
-//		System.out.println("Industry Selected  SuccessFully !!!!!!");
-//		Thread.sleep(5000);
- //
-		
-//	// by  dropdown 
-//		By detailsType = By.xpath("(//div[@class='selectize-input items has-options full has-items'])[1]");
-//		WebElement detailsInput = driver.findElement(detailsType);
-//		detailsInput.click();
-//		Thread.sleep(2000);
-//		driver.findElement(By.xpath("//*[@id=\"account-detail-304\"]/div[4]/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div/div/div[1]/div")).click();
-//		System.out.println(" Details selected  SuccessFully !!!!!!");
-		System.out.println("Details not  Selected  SuccessFully !!!!!!");
-//		Thread.sleep(5000);
-//
-//		By industry = By.xpath("(//div[@class='selectize-input items has-options full has-items'])[2]");
-//		WebElement industryInput = driver.findElement(industry);
-//		industryInput.click();
-//		Thread.sleep(2000);
-//		driver.findElement(By.xpath("//*[@id=\"account-detail-304\"]/div[4]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div/div/div[1]/div")).click();
-//		System.out.println("Industry Selected  SuccessFully !!!!!!");
-		System.out.println("Industry Not Selected  SuccessFully !!!!!!");
-//		Thread.sleep(5000);
+
 //
 		
 		// desciption 
@@ -195,8 +156,9 @@ public class EspoCrmLogin {
 		
 		//save buttoon 
 		
-		By saveButton = By.xpath("//button[@class='btn action btn-xs-wide edit-action-item btn-primary radius-left']");
+		By saveButton = By.xpath("//button[@data-action='save']");
 		WebElement saveBtInput = driver.findElement(saveButton);
+		Thread.sleep(2000);
 		saveBtInput.click();
 		System.out.println("Save data SuccessFully !!!!!!");
 		Thread.sleep(2000);

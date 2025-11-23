@@ -1,0 +1,62 @@
+
+package day4labdata;
+
+import java.time.Duration;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class MultiSelect{
+
+	public static void main(String[] args) throws InterruptedException {
+		
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("http://localhost/samples/select.php");
+		Thread.sleep(5000);		
+		WebElement el = driver.findElement(By.id("langs"));
+		Select langs = new Select(el); // dropdown ke vakt 
+		langs.selectByIndex(0);
+		Thread.sleep(5000);
+		langs.selectByVisibleText("CSS");
+		Thread.sleep(5000);
+		langs.selectByContainsVisibleText("Type");
+		Thread.sleep(5000);		
+		langs.deselectByIndex(3);
+		Thread.sleep(5000);
+		langs.deselectByVisibleText("CSS");
+		Thread.sleep(5000);
+		langs.deSelectByContainsVisibleText("HTM");
+		Thread.sleep(5000);		
+
+		langs.selectByVisibleText("CSS");
+		langs.selectByIndex(0);
+		langs.selectByContainsVisibleText("Type");
+		Thread.sleep(5000);
+
+		List<WebElement> allLangs = langs.getOptions();
+		System.out.println("###Get All Options");
+		for(WebElement l : allLangs) {
+			System.out.println(l.getText());
+		}
+		System.out.println("###Get First Selected Option");
+		System.out.println(langs.getFirstSelectedOption().getText());
+		
+		List<WebElement> selectedLangs = langs.getAllSelectedOptions();
+		System.out.println("###Get All Selected Options");
+		for(WebElement l : selectedLangs) {
+			System.out.println(l.getText());
+		}
+		
+		System.out.println("###Multiple "+langs.isMultiple());
+		langs.deselectAll();
+		
+		Thread.sleep(5000);
+		driver.quit();
+
+	}
+}
