@@ -19,10 +19,12 @@ public class CreateDataBase {
 
 		By user = By.xpath("//input[@id='field-userName']");
 		WebElement userput = driver.findElement(user);
-		userput.clear();
+//		userput.clear();
 		Thread.sleep(2000);
 		userput.sendKeys("admin");
-		Thread.sleep(5000);
+		
+		System.out.println("Text Entered in txtUsername is "+userput.getAttribute("value"));
+		Thread.sleep(2000);
 
 		By pass = By.xpath("//input[@id='field-password']");
 		WebElement passput = driver.findElement(pass);
@@ -36,6 +38,7 @@ public class CreateDataBase {
 
 		loginclick.click();
 		Thread.sleep(5000);
+//		System.out.println(userput.getText());
 		System.out.println("Login Account  Successfully !!!");
 
 		By account = By.xpath("(//a[@class='nav-link'])[2]");
@@ -51,7 +54,7 @@ public class CreateDataBase {
 		creditClick.click();
 		System.out.println("clicked on Credit Account  button !!!");
 		Thread.sleep(5000);
-		
+
 		By name = By.xpath("//input[@data-name='name']");
 		WebElement nameInput = driver.findElement(name);
 		Thread.sleep(5000);
@@ -59,7 +62,6 @@ public class CreateDataBase {
 		nameInput.sendKeys("CCST_DATA");
 		System.out.println("Successfully Entered Credit Account Details !!");
 		Thread.sleep(5000);
-		
 
 		By web = By.xpath("(//input[@class='main-element form-control'])[2]");
 		WebElement webInput = driver.findElement(web);
@@ -75,9 +77,8 @@ public class CreateDataBase {
 		System.out.println("Entered gmail SuccessFully !!!!!!");
 		Thread.sleep(5000);
 
-	
 		By phone = By.xpath("(//div[@class='selectize-input items full has-options has-items'])[1]");
-		////html/body/div[1]/div/div[2]/div/div[4]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/div/div/div/span[1]/div/div[1]/div
+		//// html/body/div[1]/div/div[2]/div/div[4]/div[1]/div[1]/div[1]/div[2]/div[2]/div[2]/div/div/div/span[1]/div/div[1]/div
 		Thread.sleep(2000);
 		WebElement phoneInput = driver.findElement(phone);
 		Thread.sleep(5000);
@@ -142,30 +143,152 @@ public class CreateDataBase {
 		System.out.println("Shipping Address Entered SuccessFully !!!!!!");
 		Thread.sleep(5000);
 
-
 //
-		
-		// desciption 
+		// by dropdown
+		// By detailsType = By.xpath("(//div[@class='selectize-input items has-options
+		// full has-items'])[1]");
+		// By detailsType =
+		// By.xpath("//span[text()='Type']/parent::label/following-sibling::div/descendant::div[2]']");
+
+		WebElement abcd = driver
+				.findElement(By.xpath("//span[text()='Type']/parent::label/following-sibling::div/descendant::div[2]"));
+		// Thread.sleep(2000);
+		// WebElement detailsInput = driver.findElement(detailsType);
+		abcd.click();
+		Thread.sleep(2000);
+		// detailsInput.click();
+		// Thread.sleep(2000);
+		driver.findElement(By.xpath("//div[text()='Partner']")).click();
+		System.out.println(" Details selected  SuccessFully !!!!!!");
+		System.out.println("Details not  Selected  SuccessFully !!!!!!");
+		Thread.sleep(2000);
+
+		By industry = By.xpath("(//div[@data-name='industry'])[2]/descendant::div[2]");
+		WebElement industryInput = driver.findElement(industry);
+		industryInput.click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//div[@data-value='Software']")).click();
+		System.out.println("Industry Selected  SuccessFully !!!!!!");
+	
+		Thread.sleep(2000);
+
+		// desciption
 		By desciption = By.xpath("//textarea[@data-name='description']");
 		WebElement desciptionInput = driver.findElement(desciption);
-		
-		desciptionInput.sendKeys(" Innovation parts Cdac Acts Pashan Pune  411002 ");
+
+		desciptionInput.sendKeys("Innovation parts Cdac Acts Pashan Pune  411002");
 		System.out.println("Description added  SuccessFully !!!!!!");
 		Thread.sleep(5000);
-		
-		
-		//save buttoon 
-		
+
+		// save buttoon
+
 		By saveButton = By.xpath("//button[@data-action='save']");
 		WebElement saveBtInput = driver.findElement(saveButton);
 		Thread.sleep(2000);
 		saveBtInput.click();
 		System.out.println("Save data SuccessFully !!!!!!");
 		Thread.sleep(2000);
-		
+
 		// compairing Each details .
 		
+		 String store1 = userput.getAttribute("value");
+		 String store2 = passput.getAttribute("value");
+		 String store3 = nameInput.getAttribute("value");
+		 String store4 = webInput.getAttribute("value");
+		 String store5 = gmailInput.getAttribute("value");
+		 String store6 = numInput.getText();
+		 String store7 = streetInput.getText();
+		 String store8 = cityInput.getText();
+		 String store9 = stateInput.getText();
+		 String store10 = postalInput.getText();
+		 String store11 = countryInput.getText();
+		 String store12 = desciptionInput.getText();
 		
+		 
+		 
+       
+       if(store1 == "admin") {
+    	   System.out.println("user verified Successfully !!!");
+       }else {
+    	   System.out.println("user verified failed !!!");
+       }
+       
+       if(store2 == "admin") {
+    	   System.out.println("password verified Successfully !!!");
+       }else {
+    	   System.out.println("password verified failed !!!");
+       }
+       
+       if(store3 == "CCST_DATA") {
+    	   System.out.println("Name data verified Successfully !!!");
+       }else {
+    	   System.out.println("Name data verified failed !!!");
+       }
+       
+       if(store4 == "  \r\n"
+       		+ "       if(store3 == \"CCST_DATA\") {\r\n"
+       		+ "    	   System.out.println(\"Name data verified Successfully !!!\");\r\n"
+       		+ "       }else {\r\n"
+       		+ "    	   System.out.println(\"Name data verified failed !!!\");\r\n"
+       		+ "       }") {
+    	   System.out.println("WebInput verified Successfully !!!");
+       }else {
+    	   System.out.println("WebInput verified failed !!!");
+       }
+       
+       if(store5 == "cdac-acts@gmail.com") {
+    	   System.out.println("Gmail verified Successfully !!!");
+       }else {
+    	   System.out.println("Gmail data verified failed !!!");
+       }
+       
+       
+       if(store6 == "1234567892") {
+    	   System.out.println("Number verified Successfully !!!");
+       }else {
+    	   System.out.println("Number data verified failed !!!");
+       }
+       
+       if(store7 == "Innovation Park CDAC Acts") {
+    	   System.out.println("Strret verified Successfully !!!");
+       }else {
+    	   System.out.println("Street data verified failed !!!");
+       }
+       
+       if(store8 == "pune") {
+    	   System.out.println("Number verified Successfully !!!");
+       }else {
+    	   System.out.println("Number data verified failed !!!");
+       }
+       
+       if(store9 == "Maharashtra") {
+    	   System.out.println("State verified Successfully !!!");
+       }else {
+    	   System.out.println("State verified failed !!!");
+       }
+       
+       if(store10 == "411002") {
+    	   System.out.println("Postal verified Successfully !!!");
+       }else {
+    	   System.out.println("Postal  verified failed !!!");
+       }
+       
+       if(store11 == "India") {
+    	   System.out.println("Country verified Successfully !!!");
+       }else {
+    	   System.out.println("Country  verified failed !!!");
+       }
+       
+       
+       if(store12 == "Innovation parts Cdac Acts Pashan Pune  411002") {
+    	   System.out.println("Postal verified Successfully !!!");
+       }else {
+    	   System.out.println("Postal  verified failed !!!");
+       }
+       
+       
+       
+    
 	}
-
+	
 }
