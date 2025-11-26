@@ -1,0 +1,2 @@
+Session 7, Date - 25-11-25, Completion Date - 28-11-25
+1. Automate ESPO CRM login page without thread.sleep and also verify login is successfull. 
