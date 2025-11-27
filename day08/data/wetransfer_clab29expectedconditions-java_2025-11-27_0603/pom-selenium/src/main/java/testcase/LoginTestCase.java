@@ -14,4 +14,16 @@ public class LoginTestCase {
 	public void validLogin() {
 		login.login("admin", "admin");
 	}
+	
+	// this entered by me 
+	public void InvalidLogin() {
+		try {
+		login.login("admin1", "admin1");
+		System.out.println("Invalid login passed !!!");
+		
+		}catch(Exception e)
+		{
+			System.out.println("login  failed!!!");
+			}
+		}
 }

@@ -8,7 +8,7 @@ public class DriverFactory {
     private static WebDriver driver;
 
     public static WebDriver initDriver(String browser) {
-        if (browser.equalsIgnoreCase("chrome")) {
+        if (browser.equalsIgnoreCase("chrome")) { // check character by characater not consider uppercase, lowercase  
             driver = new ChromeDriver();
         } else if (browser.equalsIgnoreCase("firefox")) {
             driver = new FirefoxDriver();
@@ -28,8 +28,9 @@ public class DriverFactory {
     }
 
     public static void quitDriver() {
-        if (driver != null) {
+        if (driver != null) { 
             driver.quit();
+            
             driver = null;
         }
     }
