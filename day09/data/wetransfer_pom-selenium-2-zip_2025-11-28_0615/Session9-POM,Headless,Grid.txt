@@ -1,0 +1,3 @@
+Session 9, Date - 28-11-25, Completion Date - 30-11-25
+1. Understand and Implement Pagefactory.initElements method with searchContext reference. 
+2. Run Login Page & Create Account Test Case in Headless Mode.
